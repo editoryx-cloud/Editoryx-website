@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editoryx — We Edit. You Create.</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0a0a0a; --surface: #111111; --surface2: #1a1a1a;
+    --accent: #e8ff47; --accent2: #3b82f6; --orange: #ff6b35;
+    --text: #f0f0f0; --muted: #666; --border: #222;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);} }
+  .reveal { opacity:0; transform:translateY(36px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* NAV */
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:20px 24px; backdrop-filter:blur(20px); background:rgba(10,10,10,0.85); border-bottom:1px solid var(--border); }
+  .logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; letter-spacing:-0.03em; text-decoration:none; color:var(--text); }
+  .logo span { color:var(--accent); }
+  .nav-buttons { display:flex; gap:12px; }
+  .btn-ghost { background:transparent; border:1px solid var(--border); color:var(--text); padding:8px 16px; border-radius:2px; font-family:'Syne',sans-serif; font-weight:600; font-size:0.75rem; letter-spacing:0.05em; text-transform:uppercase; cursor:pointer; text-decoration:none; }
+  .btn-accent { background:var(--accent); border:none; color:#000; padding:8px 16px; border-radius:2px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.75rem; letter-spacing:0.05em; text-transform:uppercase; cursor:pointer; text-decoration:none; }
+
+  /* HERO STATS - 2 col mobile, 4 col desktop */
+  .hero-stats { display:grid; grid-template-columns:1fr 1fr; gap:24px; padding-top:40px; border-top:1px solid var(--border); animation:fadeUp 0.7s ease 0.4s both; }
+
+  .plans-grid { display:flex; flex-direction:column; gap:2px; }
+
+  @media (min-width: 768px) {
+    .hero-stats { grid-template-columns: repeat(4, 1fr); gap:40px; }
+    .how-grid { grid-template-columns: repeat(4, 1fr); }
+    .plans-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:2px; }
+  }
+
+  /* HERO */
+  .hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:130px 24px 80px; position:relative; overflow:hidden; }
+  .hero-bg { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-family:'Syne',sans-serif; font-size:clamp(80px,22vw,240px); font-weight:800; color:transparent; -webkit-text-stroke:1px rgba(255,255,255,0.025); white-space:nowrap; pointer-events:none; user-select:none; letter-spacing:-0.05em; }
+  .hero-tag { display:inline-flex; align-items:center; gap:8px; background:var(--surface2); border:1px solid var(--border); padding:6px 16px; border-radius:100px; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); width:fit-content; margin-bottom:28px; animation:fadeUp 0.7s ease both; }
+  .hero-dot { width:6px; height:6px; background:var(--accent); border-radius:50%; animation:pulse 2s infinite; display:inline-block; }
+  h1 { font-family:'Syne',sans-serif; font-size:clamp(52px,13vw,96px); font-weight:800; line-height:0.9; letter-spacing:-0.04em; animation:fadeUp 0.7s ease 0.1s both; margin-bottom:28px; }
+  h1 span { color:var(--accent); }
+  .hero-sub { font-size:1.05rem; color:var(--muted); max-width:420px; line-height:1.7; animation:fadeUp 0.7s ease 0.2s both; margin-bottom:40px; }
+  .hero-btns { display:flex; gap:12px; animation:fadeUp 0.7s ease 0.3s both; margin-bottom:64px; flex-wrap:wrap; }
+  .btn-primary { background:var(--accent); color:#000; padding:14px 32px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; border:none; border-radius:2px; cursor:pointer; text-decoration:none; display:inline-block; transition:transform 0.2s; }
+  .btn-primary:hover { transform:translateY(-2px); }
+  .btn-secondary { background:transparent; color:var(--text); padding:14px 32px; font-family:'Syne',sans-serif; font-weight:600; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; border:1px solid var(--border); border-radius:2px; cursor:pointer; text-decoration:none; display:inline-block; transition:transform 0.2s; }
+  .btn-secondary:hover { transform:translateY(-2px); }
+  .stat-num { font-family:'Syne',sans-serif; font-size:2.2rem; font-weight:800; letter-spacing:-0.03em; color:var(--accent); }
+  .stat-label { font-size:0.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-top:4px; }
+
+  /* MARQUEE */
+  .marquee-wrap { overflow:hidden; border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:16px 0; background:var(--surface); }
+  .marquee-track { display:flex; animation:marquee 22s linear infinite; width:max-content; }
+  .marquee-item { display:flex; align-items:center; gap:20px; padding:0 36px; font-family:'Syne',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); white-space:nowrap; }
+  .marquee-item span.dot { width:4px; height:4px; background:var(--accent); border-radius:50%; }
+
+  /* SECTIONS */
+  section { padding:100px 24px; }
+  .section-label { font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:16px; display:flex; align-items:center; gap:12px; }
+  .section-label::before { content:''; width:24px; height:1px; background:var(--accent); display:inline-block; }
+  .section-title { font-family:'Syne',sans-serif; font-size:clamp(32px,8vw,52px); font-weight:800; letter-spacing:-0.04em; line-height:1; margin-bottom:12px; }
+  .section-sub { color:var(--muted); font-size:0.95rem; line-height:1.7; max-width:420px; margin-bottom:48px; }
+
+  /* HOW */
+  #how { background:var(--bg); }
+  .how-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+  .how-card { background:var(--surface); padding:36px 24px; border-top:2px solid var(--border); transition:border-color 0.3s; }
+  .how-card:first-child { border-color:var(--accent); }
+  .how-num { font-family:'Syne',sans-serif; font-size:2.8rem; font-weight:800; color:var(--border); line-height:1; margin-bottom:16px; letter-spacing:-0.05em; }
+  .how-title { font-family:'Syne',sans-serif; font-size:0.95rem; font-weight:700; margin-bottom:10px; }
+  .how-desc { font-size:0.82rem; color:var(--muted); line-height:1.6; }
+
+  /* PRICING */
+  #pricing { background:var(--surface); }
+  .plan-card { padding:36px 28px; transition:transform 0.3s; }
+  .plan-card:hover { transform:translateY(-4px); }
+  .plan-card.featured { background:var(--accent); color:#000; }
+  .plan-card:not(.featured) { background:var(--bg); }
+  .plan-badge { display:inline-block; font-size:0.62rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; padding:4px 12px; border-radius:100px; margin-bottom:16px; }
+  .plan-card.featured .plan-badge { background:var(--accent2); color:#fff; }
+  .plan-card:not(.featured) .plan-badge { background:var(--orange); color:#fff; }
+  .plan-name { font-family:'Syne',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:8px; }
+  .plan-card.featured .plan-name { color:rgba(0,0,0,0.45); }
+  .plan-card:not(.featured) .plan-name { color:var(--muted); }
+  .plan-per-video { font-family:'Syne',sans-serif; font-size:3.2rem; font-weight:800; letter-spacing:-0.04em; line-height:1; margin-bottom:4px; }
+  .plan-per-video span { font-size:1rem; font-weight:600; letter-spacing:0; }
+  .plan-monthly { font-size:0.85rem; margin-bottom:4px; }
+  .plan-card.featured .plan-monthly { color:rgba(0,0,0,0.5); }
+  .plan-card:not(.featured) .plan-monthly { color:var(--muted); }
+  .plan-compare { font-size:0.75rem; margin-bottom:28px; font-style:italic; }
+  .plan-card.featured .plan-compare { color:rgba(0,0,0,0.4); }
+  .plan-card:not(.featured) .plan-compare { color:#444; }
+  .plan-divider { height:1px; margin-bottom:28px; }
+  .plan-card.featured .plan-divider { background:rgba(0,0,0,0.15); }
+  .plan-card:not(.featured) .plan-divider { background:var(--border); }
+  .plan-features { list-style:none; display:flex; flex-direction:column; gap:12px; margin-bottom:32px; }
+  .plan-features li { display:flex; align-items:flex-start; gap:10px; font-size:0.88rem; line-height:1.5; }
+  .plan-card.featured .plan-features li { color:rgba(0,0,0,0.65); }
+  .plan-card:not(.featured) .plan-features li { color:var(--muted); }
+  .plan-features li::before { content:'→'; font-weight:700; flex-shrink:0; margin-top:1px; }
+  .plan-card.featured .plan-features li::before { color:#000; }
+  .plan-card:not(.featured) .plan-features li::before { color:var(--accent); }
+  .plan-cta { display:block; width:100%; padding:14px 24px; border-radius:2px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; border:none; text-align:center; text-decoration:none; transition:opacity 0.2s; }
+  .plan-card.featured .plan-cta { background:#000; color:var(--accent); }
+  .plan-card:not(.featured) .plan-cta { background:var(--surface2); color:var(--text); }
+
+  /* ONBOARDING */
+  #contact { background:var(--bg); }
+  .contact-info-item { display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+  .contact-icon { width:38px; height:38px; background:var(--surface2); border:1px solid var(--border); border-radius:2px; display:flex; align-items:center; justify-content:center; font-size:0.9rem; flex-shrink:0; }
+  .contact-text { font-size:0.88rem; color:var(--muted); }
+  .onboarding-form { margin-top:48px; background:var(--surface); border:1px solid var(--border); border-radius:2px; padding:36px 28px; }
+  .form-label-tag { font-family:'Syne',sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:24px; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .form-group { display:flex; flex-direction:column; gap:6px; margin-bottom:14px; }
+  .form-group label { font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
+  .form-group input, .form-group select, .form-group textarea { width:100%; background:var(--surface2); border:1px solid var(--border); color:var(--text); padding:12px 16px; font-family:'DM Sans',sans-serif; font-size:0.9rem; border-radius:2px; outline:none; transition:border-color 0.2s; appearance:none; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--accent); }
+  .form-group textarea { resize:vertical; }
+  .form-submit { background:var(--accent); color:#000; padding:16px 32px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.88rem; letter-spacing:0.05em; text-transform:uppercase; border:none; border-radius:2px; cursor:pointer; transition:transform 0.2s; margin-top:8px; width:100%; }
+  .form-submit:hover { transform:translateY(-2px); }
+  .form-submit.sent { background:var(--surface2); color:var(--accent); border:1px solid var(--border); cursor:default; transform:none; }
+
+  /* FOOTER */
+  footer { border-top:1px solid var(--border); padding:40px 24px; display:flex; flex-direction:column; gap:20px; }
+  .footer-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.2rem; letter-spacing:-0.03em; color:var(--text); text-decoration:none; }
+  .footer-logo span { color:var(--accent); }
+  .footer-links { display:flex; gap:28px; flex-wrap:wrap; }
+  .footer-links a { font-size:0.82rem; color:var(--muted); text-decoration:none; transition:color 0.2s; }
+  .footer-links a:hover { color:var(--text); }
+  .footer-copy { font-size:0.78rem; color:var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Editor<span>yx</span></a>
+  <div class="nav-buttons">
+    <a href="#how" class="btn-ghost">Learn More</a>
+    <a href="#pricing" class="btn-accent">Subscribe</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">EDIT</div>
+  <div class="hero-tag"><span class="hero-dot"></span> Editing Agency — Est. 2025</div>
+  <h1>We edit.<br><span>You create.</span></h1>
+  <p class="hero-sub">Editoryx handles the most tedious part of content creation — so you stay focused on what you do best.</p>
+  <div class="hero-btns">
+    <a href="#pricing" class="btn-primary">See Plans</a>
+    <a href="#contact" class="btn-secondary">Get Started</a>
+  </div>
+  <div class="hero-stats">
+    <div><div class="stat-num">100%</div><div class="stat-label">Human Edited</div></div>
+    <div><div class="stat-num">48h</div><div class="stat-label">Avg Turnaround</div></div>
+    <div><div class="stat-num">4</div><div class="stat-label">Plans Available</div></div>
+    <div><div class="stat-num">∞</div><div class="stat-label">Revisions on Top Plans</div></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track" id="marquee"></div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="reveal">
+    <div class="section-label">Process</div>
+    <h2 class="section-title">Simple as it gets.</h2>
+    <p class="section-sub">Three steps between raw footage and publish-ready content.</p>
+  </div>
+  <div class="how-grid reveal">
+    <div class="how-card">
+      <div class="how-num">01</div>
+      <div class="how-title">Pick Your Plan</div>
+      <div class="how-desc">Choose the tier that fits your content volume and style. Reels, long-form, or both.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">02</div>
+      <div class="how-title">Send Your Footage</div>
+      <div class="how-desc">Drop your raw files and tell us your vision. Our editors get to work immediately.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">03</div>
+      <div class="how-title">Approve & Post</div>
+      <div class="how-desc">Receive your edited content, request revisions if needed, then post with confidence.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">04</div>
+      <div class="how-title">Stay Consistent</div>
+      <div class="how-desc">Your subscription resets monthly. Keep a steady content schedule effortlessly.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="reveal">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Flat monthly rates.<br>No surprises.</h2>
+    <p class="section-sub">All plans include a dedicated editor and a direct line to our team.</p>
+  </div>
+  <div class="plans-grid reveal" id="plans"></div>
+</section>
+
+<!-- ONBOARDING -->
+<section id="contact">
+  <div class="reveal">
+    <div class="section-label">Get Started</div>
+    <h2 class="section-title">Ready to <span style="color:var(--accent)">subscribe?</span></h2>
+    <p class="section-sub">Pick your plan above and subscribe instantly. Once you're in, fill out the form below so we can get your first edits started right away.</p>
+    <div class="contact-info-item"><div class="contact-icon">✉</div><span class="contact-text">hello@editoryx.co</span></div>
+    <div class="contact-info-item"><div class="contact-icon">⚡</div><span class="contact-text">First edits delivered within 48 hours</span></div>
+    <div class="contact-info-item"><div class="contact-icon">▶</div><a href="https://www.youtube.com/@Editoryx-j7l" target="_blank" class="contact-text" style="color:var(--muted);text-decoration:none;">Watch us on YouTube</a></div>
+  </div>
+  <div class="reveal">
+    <div class="onboarding-form">
+      <div class="form-label-tag">New Client Onboarding</div>
+      <form action="https://formspree.io/f/maqakoke" method="POST">
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="Alex"></div>
+        <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Johnson"></div>
+      </div>
+      <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="alex@yourchannel.com"></div>
+      <div class="form-group">
+        <label>Your Plan</label>
+        <select name="plan">
+          <option value="">Select your plan...</option>
+          <option>Starter — $500/mo</option>
+          <option>Creator — $900/mo</option>
+          <option>Studio — $1,500/mo</option>
+          <option>Long-Form — $1,800/mo</option>
+        </select>
+      </div>
+      <div class="form-group"><label>What platform(s) do you post on?</label><input type="text" name="platforms" placeholder="Instagram, TikTok, YouTube..."></div>
+      <div class="form-group"><label>Describe your content style</label><textarea rows="3" name="content_style" placeholder="E.g. fast-paced gaming content, lifestyle vlogs, business tips..."></textarea></div>
+      <div class="form-group"><label>Any reference videos or creators you love?</label><textarea rows="2" name="references" placeholder="Drop links or names — helps us match your style"></textarea></div>
+      <button type="submit" class="form-submit">Submit Onboarding →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">Editor<span>yx</span></a>
+  <div class="footer-links">
+    <a href="#how">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 Editoryx. All rights reserved.</div>
+</footer>
+
+<script>
+const plans = [
+  { name:"Starter", perVideo:"$33", price:"$500", tag:null, featured:false, stripeUrl:"https://buy.stripe.com/3cI4gs3Ei8u568fdz52Nq01", features:["15 reels per month","Music sync + captions","2 revisions per video","Standard turnaround","Dedicated editor"] },
+  { name:"Creator", perVideo:"$36", price:"$900", tag:null, featured:false, stripeUrl:"https://buy.stripe.com/dRm5kw4ImaCd2W38eL2Nq02", features:["25 reels per month","Music, captions + animations","3 revisions per video","Faster turnaround","Dedicated editor"] },
+  { name:"Studio", perVideo:"$60", price:"$1,500", tag:"Most Popular", featured:true, stripeUrl:"https://buy.stripe.com/bJe6oA3EieStdAH9iP2Nq03", features:["25 premium reels per month","Advanced edits + AI effects","Unlimited revisions","Priority turnaround","Senior dedicated editor"] },
+  { name:"Long-Form", perVideo:"$120", price:"$1,800", tag:"Videos", featured:false, stripeUrl:"https://buy.stripe.com/7sYbIU7UydOpeEL9iP2Nq04", features:["15 videos/month (≤30 min)","Full production editing","Unlimited revisions","Fastest turnaround","Senior dedicated editor"] },
+];
+
+const marqueeItems = ["Reels","Long-Form","Captions","Animations","Music Sync","AI Effects","Color Grade","Fast Delivery","Revisions"];
+const allItems = [...marqueeItems,...marqueeItems];
+document.getElementById("marquee").innerHTML = allItems.map(i => `<div class="marquee-item"><span>${i}</span><span class="dot"></span></div>`).join("");
+
+document.getElementById("plans").innerHTML = plans.map(p => `
+  <div class="plan-card ${p.featured ? "featured" : ""}">
+    ${p.tag ? `<span class="plan-badge">${p.tag}</span>` : ""}
+    <div class="plan-name">${p.name}</div>
+    <div class="plan-per-video">${p.perVideo}<span> /video</span></div>
+    <div class="plan-monthly">${p.price} per month</div>
+    <div class="plan-compare">vs $100–300/video on freelance sites</div>
+    <div class="plan-divider"></div>
+    <ul class="plan-features">${p.features.map(f => `<li>${f}</li>`).join("")}</ul>
+    <a href="${p.stripeUrl}" target="_blank" class="plan-cta">Subscribe Now →</a>
+  </div>
+`).join("");
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*80); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+reveals.forEach(el => obs.observe(el));
+
+function handleSubmit() {
+  const btn = document.getElementById("submitBtn");
+  btn.textContent = "Submitted ✓ We'll be in touch!";
+  btn.classList.add("sent");
+  btn.disabled = true;
+}
+</script>
+</body>
+</html>

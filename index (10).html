@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editoryx — Professional Video Editing Agency | Reels & Long Form</title>
+<meta name="description" content="Editoryx is a subscription video editing agency for content creators and businesses. We edit your reels, shorts, and long form videos so you can focus on creating. Plans from $25/video.">
+<meta name="keywords" content="video editing agency, reel editing service, content creator editing, outsource video editing, subscription video editing, short form video editor, YouTube video editing, Instagram reels editing, TikTok editing service, affordable video editing">
+<meta name="author" content="Editoryx">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://editoryx.co">
+
+<!-- Open Graph / Social Media -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://editoryx.co">
+<meta property="og:title" content="Editoryx — We Edit. You Create.">
+<meta property="og:description" content="Professional video editing for content creators and businesses. Reels, shorts, and long form videos edited by real humans. Plans from $25/video.">
+<meta property="og:image" content="https://editoryx.co/og-image.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Editoryx — We Edit. You Create.">
+<meta name="twitter:description" content="Professional video editing for content creators and businesses. Plans from $25/video.">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Editoryx",
+  "url": "https://editoryx.co",
+  "description": "Professional video editing agency for content creators and businesses. Subscription plans for reels and long form video editing.",
+  "email": "hello@editoryx.co",
+  "serviceType": "Video Editing",
+  "areaServed": "Worldwide",
+  "priceRange": "$25 - $160 per video"
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8BZPYXNBKK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8BZPYXNBKK');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0a0a0a; --surface: #111111; --surface2: #1a1a1a;
+    --accent: #e8ff47; --accent2: #3b82f6; --orange: #ff6b35;
+    --text: #f0f0f0; --muted: #666; --border: #222;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);} }
+  .reveal { opacity:0; transform:translateY(36px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* NAV */
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:20px 24px; backdrop-filter:blur(20px); background:rgba(10,10,10,0.85); border-bottom:1px solid var(--border); }
+  .logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; letter-spacing:-0.03em; text-decoration:none; color:var(--text); }
+  .logo span { color:var(--accent); }
+  .nav-buttons { display:flex; gap:12px; }
+  .btn-ghost { background:transparent; border:1px solid var(--border); color:var(--text); padding:8px 16px; border-radius:2px; font-family:'Syne',sans-serif; font-weight:600; font-size:0.75rem; letter-spacing:0.05em; text-transform:uppercase; cursor:pointer; text-decoration:none; }
+  .btn-accent { background:var(--accent); border:none; color:#000; padding:8px 16px; border-radius:2px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.75rem; letter-spacing:0.05em; text-transform:uppercase; cursor:pointer; text-decoration:none; }
+
+  /* HERO STATS - 2 col mobile, 4 col desktop */
+  .hero-stats { display:grid; grid-template-columns:1fr 1fr; gap:24px; padding-top:40px; border-top:1px solid var(--border); animation:fadeUp 0.7s ease 0.4s both; }
+
+  .plans-grid { display:flex; flex-direction:column; gap:2px; }
+
+  @media (min-width: 768px) {
+    .hero-stats { grid-template-columns: repeat(4, 1fr); gap:40px; }
+    .how-grid { grid-template-columns: repeat(4, 1fr); }
+    .plans-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:2px; }
+  }
+
+  /* HERO */
+  .hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:130px 24px 80px; position:relative; overflow:hidden; }
+  .hero-bg { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-family:'Syne',sans-serif; font-size:clamp(80px,22vw,240px); font-weight:800; color:transparent; -webkit-text-stroke:1px rgba(255,255,255,0.025); white-space:nowrap; pointer-events:none; user-select:none; letter-spacing:-0.05em; }
+  .hero-tag { display:inline-flex; align-items:center; gap:8px; background:var(--surface2); border:1px solid var(--border); padding:6px 16px; border-radius:100px; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); width:fit-content; margin-bottom:28px; animation:fadeUp 0.7s ease both; }
+  .hero-dot { width:6px; height:6px; background:var(--accent); border-radius:50%; animation:pulse 2s infinite; display:inline-block; }
+  h1 { font-family:'Syne',sans-serif; font-size:clamp(52px,13vw,96px); font-weight:800; line-height:0.9; letter-spacing:-0.04em; animation:fadeUp 0.7s ease 0.1s both; margin-bottom:28px; }
+  h1 span { color:var(--accent); }
+  .hero-sub { font-size:1.05rem; color:var(--muted); max-width:420px; line-height:1.7; animation:fadeUp 0.7s ease 0.2s both; margin-bottom:40px; }
+  .hero-btns { display:flex; gap:12px; animation:fadeUp 0.7s ease 0.3s both; margin-bottom:64px; flex-wrap:wrap; }
+  .btn-primary { background:var(--accent); color:#000; padding:14px 32px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; border:none; border-radius:2px; cursor:pointer; text-decoration:none; display:inline-block; transition:transform 0.2s; }
+  .btn-primary:hover { transform:translateY(-2px); }
+  .btn-secondary { background:transparent; color:var(--text); padding:14px 32px; font-family:'Syne',sans-serif; font-weight:600; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; border:1px solid var(--border); border-radius:2px; cursor:pointer; text-decoration:none; display:inline-block; transition:transform 0.2s; }
+  .btn-secondary:hover { transform:translateY(-2px); }
+  .stat-num { font-family:'Syne',sans-serif; font-size:2.2rem; font-weight:800; letter-spacing:-0.03em; color:var(--accent); }
+  .stat-label { font-size:0.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-top:4px; }
+
+  /* MARQUEE */
+  .marquee-wrap { overflow:hidden; border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:16px 0; background:var(--surface); }
+  .marquee-track { display:flex; animation:marquee 22s linear infinite; width:max-content; }
+  .marquee-item { display:flex; align-items:center; gap:20px; padding:0 36px; font-family:'Syne',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); white-space:nowrap; }
+  .marquee-item span.dot { width:4px; height:4px; background:var(--accent); border-radius:50%; }
+
+  /* SECTIONS */
+  section { padding:100px 24px; }
+  .section-label { font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:16px; display:flex; align-items:center; gap:12px; }
+  .section-label::before { content:''; width:24px; height:1px; background:var(--accent); display:inline-block; }
+  .section-title { font-family:'Syne',sans-serif; font-size:clamp(32px,8vw,52px); font-weight:800; letter-spacing:-0.04em; line-height:1; margin-bottom:12px; }
+  .section-sub { color:var(--muted); font-size:0.95rem; line-height:1.7; max-width:420px; margin-bottom:48px; }
+
+  /* HOW */
+  #how { background:var(--bg); }
+  .how-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+  .how-card { background:var(--surface); padding:36px 24px; border-top:2px solid var(--border); transition:border-color 0.3s; }
+  .how-card:first-child { border-color:var(--accent); }
+  .how-num { font-family:'Syne',sans-serif; font-size:2.8rem; font-weight:800; color:var(--border); line-height:1; margin-bottom:16px; letter-spacing:-0.05em; }
+  .how-title { font-family:'Syne',sans-serif; font-size:0.95rem; font-weight:700; margin-bottom:10px; }
+  .how-desc { font-size:0.82rem; color:var(--muted); line-height:1.6; }
+
+  /* PRICING */
+  #pricing { background:var(--surface); }
+  .plan-card { padding:36px 28px; transition:transform 0.3s; }
+  .plan-card:hover { transform:translateY(-4px); }
+  .plan-card.featured { background:var(--accent); color:#000; }
+  .plan-card:not(.featured) { background:var(--bg); }
+  .plan-badge { display:inline-block; font-size:0.62rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; padding:4px 12px; border-radius:100px; margin-bottom:16px; }
+  .plan-card.featured .plan-badge { background:var(--accent2); color:#fff; }
+  .plan-card:not(.featured) .plan-badge { background:var(--orange); color:#fff; }
+  .plan-name { font-family:'Syne',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:8px; }
+  .plan-card.featured .plan-name { color:rgba(0,0,0,0.45); }
+  .plan-card:not(.featured) .plan-name { color:var(--muted); }
+  .plan-per-video { font-family:'Syne',sans-serif; font-size:3.2rem; font-weight:800; letter-spacing:-0.04em; line-height:1; margin-bottom:4px; }
+  .plan-per-video span { font-size:1rem; font-weight:600; letter-spacing:0; }
+  .plan-monthly { font-size:0.85rem; margin-bottom:4px; }
+  .plan-card.featured .plan-monthly { color:rgba(0,0,0,0.5); }
+  .plan-card:not(.featured) .plan-monthly { color:var(--muted); }
+  .plan-compare { font-size:0.75rem; margin-bottom:28px; font-style:italic; }
+  .plan-card.featured .plan-compare { color:rgba(0,0,0,0.4); }
+  .plan-card:not(.featured) .plan-compare { color:#444; }
+  .plan-divider { height:1px; margin-bottom:28px; }
+  .plan-card.featured .plan-divider { background:rgba(0,0,0,0.15); }
+  .plan-card:not(.featured) .plan-divider { background:var(--border); }
+  .plan-features { list-style:none; display:flex; flex-direction:column; gap:12px; margin-bottom:32px; }
+  .plan-features li { display:flex; align-items:flex-start; gap:10px; font-size:0.88rem; line-height:1.5; }
+  .plan-card.featured .plan-features li { color:rgba(0,0,0,0.65); }
+  .plan-card:not(.featured) .plan-features li { color:var(--muted); }
+  .plan-features li::before { content:'→'; font-weight:700; flex-shrink:0; margin-top:1px; }
+  .plan-card.featured .plan-features li::before { color:#000; }
+  .plan-card:not(.featured) .plan-features li::before { color:var(--accent); }
+  .plan-cta { display:block; width:100%; padding:14px 24px; border-radius:2px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; border:none; text-align:center; text-decoration:none; transition:opacity 0.2s; }
+  .plan-card.featured .plan-cta { background:#000; color:var(--accent); }
+  .plan-card:not(.featured) .plan-cta { background:var(--surface2); color:var(--text); }
+
+  /* ONBOARDING */
+  #contact { background:var(--bg); }
+  .contact-info-item { display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+  .contact-icon { width:38px; height:38px; background:var(--surface2); border:1px solid var(--border); border-radius:2px; display:flex; align-items:center; justify-content:center; font-size:0.9rem; flex-shrink:0; }
+  .contact-text { font-size:0.88rem; color:var(--muted); }
+  .onboarding-form { margin-top:48px; background:var(--surface); border:1px solid var(--border); border-radius:2px; padding:36px 28px; }
+  .form-label-tag { font-family:'Syne',sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:24px; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .form-group { display:flex; flex-direction:column; gap:6px; margin-bottom:14px; }
+  .form-group label { font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
+  .form-group input, .form-group select, .form-group textarea { width:100%; background:var(--surface2); border:1px solid var(--border); color:var(--text); padding:12px 16px; font-family:'DM Sans',sans-serif; font-size:0.9rem; border-radius:2px; outline:none; transition:border-color 0.2s; appearance:none; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--accent); }
+  .form-group textarea { resize:vertical; }
+  .form-submit { background:var(--accent); color:#000; padding:16px 32px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.88rem; letter-spacing:0.05em; text-transform:uppercase; border:none; border-radius:2px; cursor:pointer; transition:transform 0.2s; margin-top:8px; width:100%; }
+  .form-submit:hover { transform:translateY(-2px); }
+  .form-submit.sent { background:var(--surface2); color:var(--accent); border:1px solid var(--border); cursor:default; transform:none; }
+
+  /* FOOTER */
+  footer { border-top:1px solid var(--border); padding:40px 24px; display:flex; flex-direction:column; gap:20px; }
+  .footer-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.2rem; letter-spacing:-0.03em; color:var(--text); text-decoration:none; }
+  .footer-logo span { color:var(--accent); }
+  .footer-links { display:flex; gap:28px; flex-wrap:wrap; }
+  .footer-links a { font-size:0.82rem; color:var(--muted); text-decoration:none; transition:color 0.2s; }
+  .footer-links a:hover { color:var(--text); }
+  .footer-copy { font-size:0.78rem; color:var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Editor<span>yx</span></a>
+  <div class="nav-buttons">
+    <a href="#how" class="btn-ghost">Learn More</a>
+    <a href="#pricing" class="btn-accent">Subscribe</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">EDIT</div>
+  <div class="hero-tag"><span class="hero-dot"></span> Editing Agency — Est. 2025</div>
+  <h1>We edit.<br><span>You create.</span></h1>
+  <p class="hero-sub">Editoryx handles the most tedious part of content creation — so you stay focused on what you do best.</p>
+  <div class="hero-btns">
+    <a href="#pricing" class="btn-primary">See Plans</a>
+    <a href="#contact" class="btn-secondary">Get Started</a>
+  </div>
+  <div class="hero-stats">
+    <div><div class="stat-num">100%</div><div class="stat-label">Human Edited</div></div>
+    <div><div class="stat-num">48h</div><div class="stat-label">Avg Turnaround</div></div>
+    <div><div class="stat-num">4</div><div class="stat-label">Plans Available</div></div>
+    <div><div class="stat-num">∞</div><div class="stat-label">Revisions on Top Plans</div></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track" id="marquee"></div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="reveal">
+    <div class="section-label">Process</div>
+    <h2 class="section-title">Simple as it gets.</h2>
+    <p class="section-sub">Three steps between raw footage and publish-ready content.</p>
+  </div>
+  <div class="how-grid reveal">
+    <div class="how-card">
+      <div class="how-num">01</div>
+      <div class="how-title">Pick Your Plan</div>
+      <div class="how-desc">Choose the tier that fits your content volume and style. Reels, long-form, or both.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">02</div>
+      <div class="how-title">Send Your Footage</div>
+      <div class="how-desc">Drop your raw files and tell us your vision. Our editors get to work immediately.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">03</div>
+      <div class="how-title">Approve & Post</div>
+      <div class="how-desc">Receive your edited content, request revisions if needed, then post with confidence.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">04</div>
+      <div class="how-title">Stay Consistent</div>
+      <div class="how-desc">Your subscription resets monthly. Keep a steady content schedule effortlessly.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="reveal">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Build your own plan.<br>Pay for what you need.</h2>
+    <p class="section-sub">Choose your content type, quality level, and how many videos you need per month. We'll handle the rest.</p>
+  </div>
+
+  <!-- TRIAL CARD -->
+  <div class="reveal" style="margin-bottom:2px;">
+    <div style="background:linear-gradient(135deg,#1a1a1a,#111);border:1px solid var(--accent);border-radius:2px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <span style="background:var(--accent);color:#000;font-family:'Syne',sans-serif;font-weight:700;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;padding:4px 14px;border-radius:100px;">Try Us First</span>
+        <span style="font-size:0.8rem;color:var(--muted);">Not ready to commit? Start here.</span>
+      </div>
+      <div style="display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;">
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:2.8rem;font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--text);">$30<span style="font-size:1rem;font-weight:500;color:var(--muted);"> one-time</span></div>
+          <div style="font-size:0.8rem;color:var(--muted);margin-top:4px;">1 reel edited to your style — no subscription needed</div>
+        </div>
+        <a href="https://buy.stripe.com/3cI5kwfn0fWxaovcv12Nq05" target="_blank" style="background:var(--accent);color:#000;padding:12px 28px;font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.05em;text-transform:uppercase;border-radius:2px;text-decoration:none;white-space:nowrap;display:inline-block;margin-bottom:4px;">Get a Trial Edit →</a>
+      </div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;padding-top:8px;border-top:1px solid var(--border);">
+        <span style="font-size:0.8rem;color:var(--muted);">✓ Music sync + captions</span>
+        <span style="font-size:0.8rem;color:var(--muted);">✓ 1 revision included</span>
+        <span style="font-size:0.8rem;color:var(--muted);">✓ Delivered within 48h</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- REELS PLANS -->
+  <div class="reveal" style="margin-top:2px;">
+    <div style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:12px;"><span style="width:24px;height:1px;background:var(--accent);display:inline-block;"></span>Reels / Short Form</div>
+    <div style="display:grid;grid-template-columns:1fr;gap:2px;">
+
+      <!-- Basic Reels -->
+      <div style="background:var(--surface);padding:24px 28px;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Basic — Music + Captions</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:12px;">
+          <a href="https://buy.stripe.com/fZu28k0s6cKldAH9iP2Nq07" target="_blank" style="background:var(--surface2);border:1px solid var(--border);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;transition:border-color 0.2s;">
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$250</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">10 reels/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$25/reel</div>
+          </a>
+          <a href="https://buy.stripe.com/fZu4gs7Uy9y92W3eD92Nq08" target="_blank" style="background:var(--surface2);border:1px solid var(--accent);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;position:relative;">
+            <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent);color:#000;font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border-radius:100px;white-space:nowrap;">Popular</div>
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$500</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">20 reels/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$25/reel</div>
+          </a>
+          <a href="https://buy.stripe.com/eVq4gs6QuaCdgMTeD92Nq09" target="_blank" style="background:var(--surface2);border:1px solid var(--border);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;">
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$750</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">30 reels/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$25/reel</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Advanced Reels -->
+      <div style="background:var(--surface);padding:24px 28px;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Advanced — Animations + Effects</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:12px;">
+          <a href="https://buy.stripe.com/eVqbIU1waaCdgMTamT2Nq0a" target="_blank" style="background:var(--surface2);border:1px solid var(--border);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;">
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$400</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">10 reels/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$40/reel</div>
+          </a>
+          <a href="https://buy.stripe.com/aFa14geiW7q14079iP2Nq0b" target="_blank" style="background:var(--surface2);border:1px solid var(--accent);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;position:relative;">
+            <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent);color:#000;font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border-radius:100px;white-space:nowrap;">Popular</div>
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$800</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">20 reels/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$40/reel</div>
+          </a>
+          <a href="https://buy.stripe.com/6oUdR2gr4eSteEL8eL2Nq0c" target="_blank" style="background:var(--surface2);border:1px solid var(--border);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;">
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$1,200</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">30 reels/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$40/reel</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Premium Reels -->
+      <div style="background:var(--surface);padding:24px 28px;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Premium — AI Effects + Color Grade</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:12px;">
+          <a href="https://buy.stripe.com/fZu28kb6K11D7cjdz52Nq0d" target="_blank" style="background:var(--surface2);border:1px solid var(--border);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;">
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$600</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">10 reels/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$60/reel</div>
+          </a>
+          <a href="https://buy.stripe.com/3cIeV60s67q1aov9iP2Nq0e" target="_blank" style="background:var(--surface2);border:1px solid var(--accent);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;position:relative;">
+            <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent);color:#000;font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border-radius:100px;white-space:nowrap;">Popular</div>
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$1,200</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">20 reels/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$60/reel</div>
+          </a>
+          <a href="https://buy.stripe.com/00wbIUa2G39Laovdz52Nq0f" target="_blank" style="background:var(--surface2);border:1px solid var(--border);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;">
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$1,800</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">30 reels/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$60/reel</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LONG FORM PLANS -->
+  <div class="reveal" style="margin-top:24px;">
+    <div style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:12px;"><span style="width:24px;height:1px;background:var(--accent);display:inline-block;"></span>Long Form <span style="color:var(--muted);font-weight:400;">up to 30 min</span></div>
+    <div style="display:grid;grid-template-columns:1fr;gap:2px;">
+
+      <!-- Basic Long Form -->
+      <div style="background:var(--surface);padding:24px 28px;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Basic — Clean Cuts + Music</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:12px;">
+          <a href="https://buy.stripe.com/00wdR2b6K6lX9kr66D2Nq0g" target="_blank" style="background:var(--surface2);border:1px solid var(--border);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;">
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$400</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">5 videos/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$80/video</div>
+          </a>
+          <a href="https://buy.stripe.com/14AaEQ0s67q18gngLh2Nq0h" target="_blank" style="background:var(--surface2);border:1px solid var(--accent);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;position:relative;">
+            <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent);color:#000;font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border-radius:100px;white-space:nowrap;">Popular</div>
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$800</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">10 videos/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$80/video</div>
+          </a>
+          <a href="https://buy.stripe.com/fZu00c2AefWxdAH1Qn2Nq0i" target="_blank" style="background:var(--surface2);border:1px solid var(--border);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;">
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$1,200</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">15 videos/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$80/video</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Advanced Long Form -->
+      <div style="background:var(--surface);padding:24px 28px;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Advanced — Animations + Graphics</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:12px;">
+          <a href="https://buy.stripe.com/8x26oAdeS9y9dAH7aH2Nq0j" target="_blank" style="background:var(--surface2);border:1px solid var(--border);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;">
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$600</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">5 videos/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$120/video</div>
+          </a>
+          <a href="https://buy.stripe.com/6oU9AM6QubGhbsz52z2Nq0k" target="_blank" style="background:var(--surface2);border:1px solid var(--accent);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;position:relative;">
+            <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent);color:#000;font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border-radius:100px;white-space:nowrap;">Popular</div>
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$1,200</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">10 videos/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$120/video</div>
+          </a>
+          <a href="https://buy.stripe.com/28E28keiWdOp2W33Yv2Nq0l" target="_blank" style="background:var(--surface2);border:1px solid var(--border);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;">
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$1,800</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">15 videos/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$120/video</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Premium Long Form -->
+      <div style="background:var(--surface);padding:24px 28px;">
+        <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Premium — AI Effects + Full Production</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:12px;">
+          <a href="https://buy.stripe.com/7sYaEQ6Qu6lXaovamT2Nq0m" target="_blank" style="background:var(--surface2);border:1px solid var(--border);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;">
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$800</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">5 videos/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$160/video</div>
+          </a>
+          <a href="https://buy.stripe.com/14AbIUb6KeSt54b9iP2Nq0n" target="_blank" style="background:var(--surface2);border:1px solid var(--accent);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;position:relative;">
+            <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent);color:#000;font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border-radius:100px;white-space:nowrap;">Popular</div>
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$1,600</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">10 videos/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$160/video</div>
+          </a>
+          <a href="https://buy.stripe.com/9B6dR25MqfWx8gn66D2Nq0o" target="_blank" style="background:var(--surface2);border:1px solid var(--border);padding:16px 12px;text-align:center;text-decoration:none;border-radius:2px;">
+            <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);">$2,400</div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;">15 videos/mo</div>
+            <div style="font-size:0.68rem;color:var(--accent);margin-top:4px;">$160/video</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONBOARDING -->
+<section id="contact">
+  <div class="reveal">
+    <div class="section-label">Get Started</div>
+    <h2 class="section-title">Ready to <span style="color:var(--accent)">subscribe?</span></h2>
+    <p class="section-sub">Pick your plan above and subscribe instantly. Once you're in, fill out the form below so we can get your first edits started right away.</p>
+    <div class="contact-info-item"><div class="contact-icon">✉</div><span class="contact-text">hello@editoryx.co</span></div>
+    <div class="contact-info-item"><div class="contact-icon">⚡</div><span class="contact-text">First edits delivered within 48 hours</span></div>
+    <div class="contact-info-item"><div class="contact-icon">▶</div><a href="https://www.youtube.com/@Editoryx-j7l" target="_blank" class="contact-text" style="color:var(--accent);text-decoration:underline;font-weight:500;cursor:pointer;">Watch us on YouTube →</a></div>
+  </div>
+  <div class="reveal">
+    <div class="onboarding-form">
+      <div class="form-label-tag">New Client Onboarding</div>
+      <form action="https://formspree.io/f/maqakoke" method="POST">
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="Alex"></div>
+        <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Johnson"></div>
+      </div>
+      <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="alex@yourchannel.com"></div>
+      <div class="form-group">
+        <label>Your Plan</label>
+        <select name="plan">
+          <option value="">Select your plan...</option>
+          <option>Trial Edit — $30 one-time</option>
+          <option>Starter — $500/mo</option>
+          <option>Creator — $900/mo</option>
+          <option>Studio — $1,500/mo</option>
+          <option>Long-Form — $1,800/mo</option>
+        </select>
+      </div>
+      <div class="form-group"><label>What platform(s) do you post on?</label><input type="text" name="platforms" placeholder="Instagram, TikTok, YouTube..."></div>
+      <div class="form-group"><label>Describe your content style</label><textarea rows="3" name="content_style" placeholder="E.g. fast-paced gaming content, lifestyle vlogs, business tips..."></textarea></div>
+      <div class="form-group"><label>Any reference videos or creators you love?</label><textarea rows="2" name="references" placeholder="Drop links or names — helps us match your style"></textarea></div>
+      <button type="submit" class="form-submit">Submit Onboarding →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">Editor<span>yx</span></a>
+  <div class="footer-links">
+    <a href="#how">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 Editoryx. All rights reserved.</div>
+</footer>
+
+<script>
+const plans = [
+  { name:"Starter", perVideo:"$33", price:"$500", tag:null, featured:false, stripeUrl:"https://buy.stripe.com/3cI4gs3Ei8u568fdz52Nq01", features:["15 reels per month","Music sync + captions","2 revisions per video","Standard turnaround","Dedicated editor"] },
+  { name:"Creator", perVideo:"$36", price:"$900", tag:null, featured:false, stripeUrl:"https://buy.stripe.com/dRm5kw4ImaCd2W38eL2Nq02", features:["25 reels per month","Music, captions + animations","3 revisions per video","Faster turnaround","Dedicated editor"] },
+  { name:"Studio", perVideo:"$60", price:"$1,500", tag:"Most Popular", featured:true, stripeUrl:"https://buy.stripe.com/bJe6oA3EieStdAH9iP2Nq03", features:["25 premium reels per month","Advanced edits + AI effects","Unlimited revisions","Priority turnaround","Senior dedicated editor"] },
+  { name:"Long-Form", perVideo:"$120", price:"$1,800", tag:"Videos", featured:false, stripeUrl:"https://buy.stripe.com/7sYbIU7UydOpeEL9iP2Nq04", features:["15 videos/month (≤30 min)","Full production editing","Unlimited revisions","Fastest turnaround","Senior dedicated editor"] },
+];
+
+const marqueeItems = ["Reels","Long-Form","Captions","Animations","Music Sync","AI Effects","Color Grade","Fast Delivery","Revisions"];
+const allItems = [...marqueeItems,...marqueeItems];
+document.getElementById("marquee").innerHTML = allItems.map(i => `<div class="marquee-item"><span>${i}</span><span class="dot"></span></div>`).join("");
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*80); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+reveals.forEach(el => obs.observe(el));
+
+function calcPrice() {
+  const reelCount = parseInt(document.getElementById('reelCount').value) || 0;
+  const reelQuality = parseInt(document.getElementById('reelQuality').value) || 0;
+  const lfCount = parseInt(document.getElementById('lfCount').value) || 0;
+  const lfQuality = parseInt(document.getElementById('lfQuality').value) || 0;
+
+  // Reels
+  if (reelCount > 0 && reelQuality > 0) {
+    let total = reelCount * reelQuality;
+    let discount = reelCount >= 20 ? 0.10 : 0;
+    let discounted = total * (1 - discount);
+    document.getElementById('reelTotal').textContent = '$' + discounted.toLocaleString() + '/mo';
+    document.getElementById('reelBreakdown').textContent = reelCount + ' reels × $' + reelQuality + (discount ? ' — 10% bulk discount applied!' : ' per reel');
+    document.getElementById('reelResult').style.display = 'flex';
+  } else {
+    document.getElementById('reelResult').style.display = 'none';
+  }
+
+  // Long Form
+  if (lfCount > 0 && lfQuality > 0) {
+    let total = lfCount * lfQuality;
+    document.getElementById('lfTotal').textContent = '$' + total.toLocaleString() + '/mo';
+    document.getElementById('lfBreakdown').textContent = lfCount + ' videos × $' + lfQuality + ' per video';
+    document.getElementById('lfResult').style.display = 'flex';
+  } else {
+    document.getElementById('lfResult').style.display = 'none';
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editoryx — Professional Video Editing Agency | Reels &amp; Long Form</title>
+<meta name="author" content="Editoryx">
+<meta name="description" content="Editoryx is a subscription video editing agency for content creators and businesses. We edit your reels, shorts, and long form videos so you can focus on creating. Plans from $25/video.">
+<meta name="keywords" content="video editing agency, reel editing service, content creator editing, outsource video editing, subscription video editing, short form video editor, YouTube video editing, Instagram reels editing, TikTok editing service, affordable video editing">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="canonical" href="https://editoryx.co">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://editoryx.co">
+<meta property="og:title" content="Editoryx — We Edit. You Create.">
+<meta property="og:description" content="Professional video editing for content creators and businesses. Reels, shorts, and long form videos edited by real humans. Plans from $25/video.">
+<meta property="og:image" content="https://editoryx.co/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Editoryx — We Edit. You Create.">
+<meta name="twitter:description" content="Professional video editing for content creators and businesses. Plans from $25/video.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0A0A;
+    --band: #111111;
+    --card: #1A1A1A;
+    --text: #F0F0F0;
+    --muted: #858585;
+    --line: #222222;
+    --line-strong: #353535;
+    --accent: #ECFE6A;
+    --accent-ink: #0A0A0A;
+    --display: "Syne", "Arial Black", Arial, sans-serif;
+    --body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+    --header-h: 72px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { color-scheme: dark; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  h1, h2, h3, p, ol, ul, fieldset, legend { margin: 0; padding: 0; }
+  ol, ul { list-style: none; }
+  fieldset { border: 0; min-width: 0; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  section[id] { scroll-margin-top: var(--header-h); }
+
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 48px); }
+  .accent { color: var(--accent); }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.6em;
+    padding: 16px 26px;
+    border: 1px solid transparent; border-radius: 2px;
+    font-family: var(--display); font-weight: 700; font-size: 0.8rem; line-height: 1.2;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; white-space: nowrap;
+    cursor: pointer; transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .btn-accent { background: var(--accent); color: var(--accent-ink); }
+  .btn-accent:hover { background: #F6FFB0; }
+  .btn-ghost { border-color: var(--line-strong); color: var(--text); background: transparent; }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Header */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10, 10, 10, 0.88);
+    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: var(--header-h); }
+  .logo {
+    font-family: var(--display); font-weight: 800; font-size: 1.45rem; line-height: 1;
+    letter-spacing: -0.02em; text-decoration: none; color: var(--text);
+  }
+  .site-nav { display: flex; align-items: center; gap: 10px; }
+  .site-nav .btn { padding: 13px 18px; font-size: 0.72rem; }
+
+  /* Hero */
+  .hero { position: relative; overflow: hidden; padding: clamp(40px, 7vw, 88px) 0 clamp(56px, 8vw, 96px); }
+  .hero .wrap { position: relative; z-index: 1; }
+  .hero-ghost {
+    position: absolute; z-index: 0; right: 3%; top: 46%;
+    font-family: var(--display); font-weight: 800; font-size: clamp(5.5rem, 24vw, 19rem); line-height: 0.8;
+    letter-spacing: -0.02em; color: transparent; -webkit-text-stroke: 1px #181818;
+    pointer-events: none; user-select: none;
+  }
+  .tag {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 7px 18px;
+    background: #141414; border: 1px solid var(--line); border-radius: 999px;
+    font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+  }
+  .tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .hero h1 {
+    margin-top: clamp(24px, 4vw, 36px);
+    font-family: var(--display); font-weight: 800;
+    font-size: clamp(2.5rem, 11.6vw, 6.75rem); line-height: 1.02; letter-spacing: -0.02em;
+  }
+  .hero h1 span { display: block; }
+  .hero-lede {
+    max-width: 30em; margin-top: clamp(22px, 3vw, 32px);
+    color: var(--muted); font-weight: 300; font-size: clamp(1.0625rem, 1.6vw, 1.25rem); line-height: 1.65;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(28px, 4vw, 40px); }
+  .stats {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px;
+    margin-top: clamp(52px, 8vw, 80px); padding-top: clamp(40px, 6vw, 56px);
+    border-top: 1px solid var(--line);
+  }
+  .stat-num { font-family: var(--display); font-weight: 800; font-size: clamp(2.1rem, 6vw, 3rem); line-height: 1; letter-spacing: -0.02em; color: var(--accent); }
+  .stat-label { margin-top: 12px; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+  /* Ticker */
+  .ticker { overflow: hidden; background: var(--band); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 17px 0; }
+  .ticker-track { display: flex; width: max-content; animation: ticker 36s linear infinite; }
+  .ticker-group { display: flex; flex: none; }
+  .ticker-group span {
+    display: flex; align-items: center; padding-left: 28px;
+    font-family: var(--display); font-weight: 700; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); white-space: nowrap;
+  }
+  .ticker-group span::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); margin-left: 28px; }
+  @keyframes ticker { to { transform: translateX(-50%); } }
+
+  /* Sections */
+  .section { padding: clamp(72px, 10vw, 128px) 0; }
+  .band { background: var(--band); }
+  .eyebrow {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  }
+  .eyebrow::before { content: ""; flex: none; width: 24px; height: 1px; background: var(--accent); }
+  .section h2 {
+    margin-top: 18px;
+    font-family: var(--display); font-weight: 800;
+    font-size: clamp(1.9rem, 5.4vw, 3.5rem); line-height: 1.04; letter-spacing: -0.02em;
+  }
+  .lede { max-width: 36em; margin-top: 18px; color: var(--muted); font-weight: 300; font-size: 1.0625rem; line-height: 1.7; }
+
+  /* Process */
+  .steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; margin-top: clamp(40px, 6vw, 64px); }
+  .step { background: var(--band); border-top: 2px solid var(--line); padding: clamp(24px, 3vw, 36px) clamp(18px, 2.6vw, 32px) clamp(30px, 4vw, 44px); }
+  .step { position: relative; }
+  .step::before {
+    content: ""; position: absolute; left: 0; top: -2px; width: 100%; height: 2px;
+    background: var(--accent); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .step:first-child::before, .step:hover::before { transform: scaleX(1); }
+  .step-num { transition: color 0.3s; }
+  .step:hover .step-num { color: #4A4A4A; }
+  .step-num { font-family: var(--display); font-weight: 800; font-size: clamp(2.3rem, 6vw, 3.25rem); line-height: 1; letter-spacing: -0.02em; color: #2B2B2B; }
+  .step h3 { margin-top: 22px; font-family: var(--display); font-weight: 700; font-size: clamp(1rem, 1.7vw, 1.15rem); line-height: 1.25; }
+  .step p { margin-top: 12px; color: var(--muted); font-weight: 300; font-size: 0.95rem; line-height: 1.65; }
+
+  /* Shared bits */
+  .pill {
+    display: inline-block; padding: 7px 14px;
+    background: var(--accent); color: var(--accent-ink); border-radius: 999px;
+    font-family: var(--display); font-weight: 700; font-size: 0.66rem; line-height: 1; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap;
+  }
+  .checks { display: flex; flex-wrap: wrap; gap: 8px 24px; color: var(--muted); font-weight: 300; }
+  .checks li::before { content: "✓"; margin-right: 0.45em; }
+
+  /* Trial */
+  .trial { margin-top: clamp(40px, 6vw, 56px); background: #141414; border: 1px solid var(--accent); border-radius: 2px; padding: clamp(26px, 4vw, 40px); }
+  .trial-note { margin-top: 16px; color: var(--muted); font-weight: 300; }
+  .trial-price { margin-top: 10px; font-family: var(--display); font-weight: 800; font-size: clamp(2.6rem, 9vw, 3.75rem); line-height: 1; letter-spacing: -0.02em; }
+  .trial-price small { font-family: var(--body); font-weight: 400; font-size: 1rem; letter-spacing: -0.02em; color: var(--muted); margin-left: 4px; }
+  .trial-desc { margin-top: 10px; color: var(--muted); font-weight: 300; }
+  .trial .btn { margin-top: 22px; }
+  .trial .checks { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
+
+  /* Plan builder */
+  .builder { display: grid; grid-template-columns: minmax(0, 1fr); gap: 44px; margin-top: clamp(44px, 6vw, 64px); }
+  .group + .group { margin-top: 36px; }
+  .group legend { margin-bottom: 16px; }
+  .group-label {
+    display: flex; align-items: center; gap: 14px;
+    font-family: var(--display); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
+  }
+  .group-label::before { content: ""; flex: none; width: 24px; height: 1px; background: var(--accent); }
+  .group-label small { font-family: var(--body); font-weight: 400; font-size: 0.72rem; letter-spacing: 0.16em; color: var(--muted); }
+
+  .choices { display: grid; gap: 6px; }
+  .choices.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .choice {
+    position: relative; display: block; text-align: center;
+    padding: 22px 14px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 2px;
+    cursor: pointer; transition: border-color 0.15s;
+  }
+  .choice input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+  .choice:hover { border-color: var(--line-strong); }
+  .choice.is-on { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+  .choice:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .choice-name { display: block; font-family: var(--display); font-weight: 800; font-size: 1.15rem; line-height: 1.15; letter-spacing: -0.01em; }
+  .choice-note { display: block; margin-top: 8px; color: var(--muted); font-weight: 300; font-size: 0.95rem; line-height: 1.35; }
+  .choice-rate { display: block; margin-top: 6px; color: var(--accent); font-size: 0.95rem; white-space: nowrap; }
+
+  .stepper { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .stepper button {
+    width: 54px; height: 54px; flex: none;
+    background: var(--card); border: 1px solid var(--line); border-radius: 2px;
+    font-family: var(--body); font-size: 1.5rem; line-height: 1; color: var(--text); cursor: pointer;
+  }
+  .stepper button:hover { border-color: var(--accent); color: var(--accent); }
+  .stepper input {
+    width: 6.5rem; height: 54px; text-align: center;
+    background: var(--card); border: 1px solid var(--line-strong); border-radius: 2px;
+    font-family: var(--display); font-weight: 800; font-size: 1.4rem; color: var(--text);
+    -moz-appearance: textfield; appearance: textfield;
+  }
+  .stepper input:focus { outline: none; border-color: var(--accent); }
+  .stepper input::-webkit-outer-spin-button, .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  .stepper-unit { margin-left: 10px; color: var(--muted); font-weight: 300; }
+
+  .quote-card {
+    position: relative; container-type: inline-size;
+    background: var(--card); border: 1px solid var(--accent); border-radius: 2px;
+    padding: 46px clamp(20px, 4vw, 28px) 28px; text-align: center;
+  }
+  .quote-card .pill { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); }
+  .quote-price {
+    font-family: var(--display); font-weight: 800; line-height: 1; letter-spacing: -0.02em; white-space: nowrap;
+    font-size: 3rem;
+    font-size: min(3.5rem, calc(100cqi / var(--chars, 4) * 1.15));
+  }
+  .quote-count { margin-top: 14px; color: var(--muted); font-weight: 300; font-size: 1.1rem; }
+  .quote-rate { margin-top: 4px; color: var(--accent); font-size: 1.1rem; }
+  .quote-card .checks { justify-content: center; margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--line); }
+  .quote-card .btn { width: 100%; margin-top: 24px; white-space: normal; }
+  .quote-note { margin-top: 14px; color: var(--muted); font-weight: 300; font-size: 0.95rem; line-height: 1.5; }
+  .quote-note strong { color: var(--text); font-weight: 700; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 52px; }
+  .contact-points { display: grid; gap: 14px; margin-top: clamp(36px, 5vw, 52px); }
+  .contact-points li { display: flex; align-items: center; gap: 16px; color: var(--muted); font-weight: 300; }
+  .contact-points a { color: var(--muted); text-decoration: none; }
+  .contact-points a:hover { color: var(--text); }
+  .contact-points a.link { color: var(--accent); font-weight: 400; text-decoration: underline; text-underline-offset: 3px; }
+  .icon-box { flex: none; display: grid; place-items: center; width: 40px; height: 40px; background: #141414; border: 1px solid var(--line); border-radius: 2px; font-size: 1rem; }
+
+  .onboard { display: grid; gap: 22px; background: var(--band); border: 1px solid var(--line); border-radius: 2px; padding: clamp(26px, 4vw, 44px); }
+  .onboard h3 { font-family: var(--display); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+  .row { display: grid; gap: 14px; }
+  .row.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .field label, .field-label { display: block; margin-bottom: 9px; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  .field input, .field textarea, .plan-box {
+    width: 100%; padding: 14px 16px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 2px;
+    font-family: var(--body); font-size: 1rem; font-weight: 400; line-height: 1.4; color: var(--text);
+  }
+  .field textarea { min-height: 96px; resize: vertical; }
+  .field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); }
+  .field ::placeholder { color: #6C6C6C; opacity: 1; }
+  .plan-box { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+  .plan-box .plan-quote { color: var(--accent); white-space: nowrap; }
+  .plan-change { display: inline-block; margin-top: 8px; color: var(--muted); font-size: 0.9rem; }
+  .plan-change:hover { color: var(--accent); }
+  .onboard .btn { width: 100%; padding: 20px 20px; font-size: 0.9rem; white-space: normal; }
+  .form-status { font-weight: 400; min-height: 1.5em; color: var(--text); }
+  .form-status.error { color: #FF8A7A; }
+  .form-status a { color: var(--accent); }
+
+  /* Footer */
+  .site-footer { border-top: 1px solid var(--line); padding: 36px 0; }
+  .footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px; }
+  .footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+  .footer-nav a { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+  .footer-nav a:hover { color: var(--accent); }
+  .copyright { color: var(--muted); font-size: 0.85rem; font-weight: 300; }
+
+  @media (max-width: 440px) {
+    .site-header .logo { font-size: 1.2rem; }
+    .header-inner { gap: 8px; }
+    .site-nav { gap: 6px; }
+    .site-nav .btn { padding: 12px 9px; font-size: 0.6rem; letter-spacing: 0.06em; }
+    .hero-actions { gap: 10px; }
+    .hero-actions .btn { flex: 1 1 auto; padding: 16px 10px; font-size: 0.74rem; letter-spacing: 0.08em; }
+    .choices.two .choice-name { font-size: 1rem; }
+  }
+  @media (max-width: 374px) {
+    .site-nav .btn-ghost { display: none; }
+  }
+  @media (max-width: 619px) {
+    .choices.three .choice { display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 14px; text-align: left; padding: 16px 18px; }
+    .choices.three .choice-name { grid-column: 1; font-size: 1.05rem; }
+    .choices.three .choice-note { grid-column: 1; margin-top: 4px; }
+    .choices.three .choice-rate { grid-column: 2; grid-row: 1 / span 2; margin: 0; }
+  }
+  @media (min-width: 620px) {
+    .choices.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .trial { display: grid; grid-template-columns: 1fr auto; column-gap: 40px; align-items: center; }
+    .trial .btn { margin-top: 0; grid-column: 2; grid-row: 1; }
+    .trial .checks { grid-column: 1 / -1; }
+  }
+  @media (min-width: 760px) {
+    .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+  @media (min-width: 940px) {
+    .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .builder { grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: 56px; align-items: start; }
+    .quote-card { position: sticky; top: calc(var(--header-h) + 40px); margin-top: 34px; }
+    .contact-grid { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 72px; align-items: start; }
+  }
+
+  /* ---------- Motion ---------- */
+  /* Buttons: lift on hover, arrow nudges forward */
+  .btn { transition: background-color 0.15s, border-color 0.15s, color 0.15s, transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: translateY(0) scale(0.98); }
+  .btn span[aria-hidden] { display: inline-block; transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .btn:hover span[aria-hidden] { transform: translateX(5px); }
+  .choice { transition: border-color 0.15s, transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .choice:hover { transform: translateY(-2px); }
+  .ticker:hover .ticker-track { animation-play-state: paused; }
+
+  /* Hero: plays once when the page opens */
+  .hero h1 .line { overflow: hidden; padding: 0.08em 0.04em; margin: -0.08em -0.04em; }
+  .hero h1 .line > span { animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s both; }
+  .hero h1 .line + .line > span { animation-delay: 0.3s; }
+  .tag { animation: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.05s both; }
+  .tag::before { animation: pulse 2.4s ease-out 1s infinite; }
+  .hero-lede { animation: fade-up 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.55s both; }
+  .hero-actions { animation: fade-up 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.68s both; }
+  .stats { animation: fade-up 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.82s both; }
+  .hero-ghost { animation: ghost-in 1.6s ease-out 0.4s both; will-change: transform; }
+  .site-header { animation: drop-in 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  @keyframes rise { from { transform: translateY(110%); } to { transform: none; } }
+  @keyframes fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes ghost-in { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes drop-in { from { opacity: 0; transform: translateY(-100%); } to { opacity: 1; transform: none; } }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(236, 254, 106, 0.55); }
+    70%, 100% { box-shadow: 0 0 0 8px rgba(236, 254, 106, 0); }
+  }
+
+  /* Scroll reveals: only switched on by the script, so nothing hides without it */
+  .motion [data-reveal] {
+    opacity: 0; transform: translateY(26px);
+    transition: opacity 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0ms), transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0ms);
+  }
+  .motion [data-reveal].in { opacity: 1; transform: none; }
+  .motion .eyebrow[data-reveal]::before { transform: scaleX(0); transform-origin: left; transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) calc(var(--d, 0ms) + 250ms); }
+  .motion .eyebrow[data-reveal].in::before { transform: scaleX(1); }
+  .motion .step[data-reveal]:not(.in)::before { transform: scaleX(0); }
+  .motion .step[data-reveal]::before { transition-delay: calc(var(--d, 0ms) + 350ms); }
+  .quote-card.bump { animation: bump 0.35s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  @keyframes bump { 40% { box-shadow: 0 0 0 4px rgba(236, 254, 106, 0.18); } 100% { box-shadow: 0 0 0 0 rgba(236, 254, 106, 0); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .btn:hover, .choice:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top" aria-label="Editoryx home">Editor<span class="accent">yx</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="btn btn-ghost" href="#how">Learn more</a>
+      <a class="btn btn-accent" href="#pricing">Subscribe</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="hero-ghost" aria-hidden="true">EDIT</div>
+    <div class="wrap">
+      <p class="tag">Editing agency — Est. 2025</p>
+      <h1><span class="line"><span>We edit.</span></span><span class="line"><span class="accent">You create.</span></span></h1>
+      <p class="hero-lede">Editoryx handles the most tedious part of content creation — so you stay focused on what you do best.</p>
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="#pricing">Build your plan</a>
+        <a class="btn btn-ghost" href="#contact">Get started</a>
+      </div>
+      <ul class="stats">
+        <li><div class="stat-num" data-count="100" data-suffix="%">100%</div><div class="stat-label">Human edited</div></li>
+        <li><div class="stat-num" data-count="48" data-suffix="h">48h</div><div class="stat-label">Avg turnaround</div></li>
+        <li><div class="stat-num" data-count="3">3</div><div class="stat-label">Quality levels</div></li>
+        <li><div class="stat-num" data-count="25" data-prefix="$">$25</div><div class="stat-label">Per reel, starting</div></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="ticker-group">
+        <span>Reels</span><span>Long form</span><span>Captions</span><span>Music sync</span><span>AI effects</span><span>Color grade</span><span>Animations</span><span>Clean cuts</span><span>Graphics</span>
+      </div>
+      <div class="ticker-group">
+        <span>Reels</span><span>Long form</span><span>Captions</span><span>Music sync</span><span>AI effects</span><span>Color grade</span><span>Animations</span><span>Clean cuts</span><span>Graphics</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="how">
+    <div class="wrap">
+      <p class="eyebrow">Process</p>
+      <h2>Simple as it gets.</h2>
+      <p class="lede">Four steps between raw footage and publish-ready content.</p>
+      <ol class="steps">
+        <li class="step">
+          <div class="step-num" aria-hidden="true">01</div>
+          <h3>Build Your Plan</h3>
+          <p>Pick your content type, quality level, and how many videos you need. See your quote, then subscribe.</p>
+        </li>
+        <li class="step">
+          <div class="step-num" aria-hidden="true">02</div>
+          <h3>Send Your Footage</h3>
+          <p>Drop your raw files and tell us your vision. Our editors get to work immediately.</p>
+        </li>
+        <li class="step">
+          <div class="step-num" aria-hidden="true">03</div>
+          <h3>Approve &amp; Post</h3>
+          <p>Receive your edited content, request revisions if needed, then post with confidence.</p>
+        </li>
+        <li class="step">
+          <div class="step-num" aria-hidden="true">04</div>
+          <h3>Stay Consistent</h3>
+          <p>Your subscription resets monthly. Keep a steady content schedule effortlessly.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section band" id="pricing">
+    <div class="wrap">
+      <p class="eyebrow">Pricing</p>
+      <h2>Build your own plan.<br>Pay for what you need.</h2>
+      <p class="lede">Choose your content type, quality level, and how many videos you need per month. Your quote updates as you go.</p>
+
+      <div class="trial">
+        <div>
+          <span class="pill">Try us first</span>
+          <p class="trial-note">Not ready to commit? Start here.</p>
+          <p class="trial-price">$30<small>one-time</small></p>
+          <p class="trial-desc">1 reel edited to your style — no subscription needed</p>
+        </div>
+        <a class="btn btn-accent" href="https://buy.stripe.com/3cI5kwfn0fWxaovcv12Nq05">Get a trial edit <span aria-hidden="true">→</span></a>
+        <ul class="checks">
+          <li>Music sync + captions</li>
+          <li>1 revision included</li>
+          <li>Delivered within 48h</li>
+        </ul>
+      </div>
+
+      <div class="builder">
+        <div class="controls">
+          <fieldset class="group">
+            <legend><span class="group-label">Content type</span></legend>
+            <div class="choices two">
+              <label class="choice">
+                <input type="radio" name="type" value="reels" checked>
+                <span class="choice-name">Reels</span>
+                <span class="choice-note">Short form</span>
+                <span class="choice-rate">from $25/reel</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="type" value="long">
+                <span class="choice-name">Long form</span>
+                <span class="choice-note">Up to 30 min</span>
+                <span class="choice-rate">from $80/video</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="group">
+            <legend><span class="group-label">Quality level</span></legend>
+            <div class="choices three">
+              <label class="choice">
+                <input type="radio" name="quality" value="basic" checked>
+                <span class="choice-name">Basic</span>
+                <span class="choice-note" data-note="basic">Music + captions</span>
+                <span class="choice-rate" data-rate="basic">$25/reel</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="quality" value="advanced">
+                <span class="choice-name">Advanced</span>
+                <span class="choice-note" data-note="advanced">Animations + effects</span>
+                <span class="choice-rate" data-rate="advanced">$40/reel</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="quality" value="premium">
+                <span class="choice-name">Premium</span>
+                <span class="choice-note" data-note="premium">AI effects + color grade</span>
+                <span class="choice-rate" data-rate="premium">$60/reel</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="group">
+            <legend><label class="group-label" for="count">How many per month</label></legend>
+            <div class="stepper">
+              <button type="button" id="minus" aria-label="One fewer">&minus;</button>
+              <input type="number" id="count" min="1" max="200" step="1" value="10" inputmode="numeric">
+              <button type="button" id="plus" aria-label="One more">+</button>
+              <span class="stepper-unit" id="unit">reels/mo</span>
+            </div>
+          </fieldset>
+        </div>
+
+        <aside class="quote-card" aria-label="Your quote">
+          <span class="pill">Your quote</span>
+          <p class="quote-price" id="quotePrice">$250</p>
+          <p class="quote-count" id="quoteCount">10 reels/mo</p>
+          <p class="quote-rate" id="quoteRate">$25/reel</p>
+          <ul class="checks">
+            <li id="featA">Music</li>
+            <li id="featB">Captions</li>
+          </ul>
+          <p class="sr-only" id="liveSummary" aria-live="polite"></p>
+          <a class="btn btn-accent" id="subscribeBtn" href="https://buy.stripe.com/cNidR2deS25HeELamT2Nq0y" target="_blank" rel="noopener">Subscribe <span aria-hidden="true">→</span></a>
+          <p class="quote-note" id="quoteNote">At checkout, set the quantity to <strong>10</strong> to match this quote.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Get started</p>
+        <h2>Ready to<br><span class="accent">subscribe?</span></h2>
+        <p class="lede">Build your plan above and subscribe instantly. Once you're in, fill out the form below so we can get your first edits started right away.</p>
+        <ul class="contact-points">
+          <li><span class="icon-box" aria-hidden="true">✉️</span><a href="mailto:hello@editoryx.co">hello@editoryx.co</a></li>
+          <li><span class="icon-box" aria-hidden="true">⚡</span>First edits delivered within 48 hours</li>
+          <li><span class="icon-box" aria-hidden="true">▶️</span><a class="link" href="https://www.youtube.com/@Editoryx-j7l" target="_blank" rel="noopener">Watch us on YouTube →</a></li>
+        </ul>
+      </div>
+
+      <form class="onboard" id="requestForm" action="mailto:hello@editoryx.co" method="post" enctype="text/plain">
+        <h3>New client onboarding</h3>
+
+        <div class="row two">
+          <div class="field">
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" name="First name" autocomplete="given-name" placeholder="Alex" required>
+          </div>
+          <div class="field">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" name="Last name" autocomplete="family-name" placeholder="Johnson" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" autocomplete="email" placeholder="alex@yourchannel.com" required>
+        </div>
+        <div class="field">
+          <span class="field-label">Your plan</span>
+          <div class="plan-box">
+            <span id="recapText">10 reels a month, Basic quality</span>
+            <span class="plan-quote" id="recapQuote">$250/mo</span>
+          </div>
+          <a class="plan-change" href="#pricing">Change plan</a>
+          <input type="hidden" name="Plan" id="planField" value="">
+          <input type="hidden" name="Quote" id="quoteField" value="">
+        </div>
+        <div class="field">
+          <label for="platforms">What platform(s) do you post on?</label>
+          <input type="text" id="platforms" name="Platforms" placeholder="Instagram, TikTok, YouTube…">
+        </div>
+        <div class="field">
+          <label for="contentStyle">Describe your content style</label>
+          <textarea id="contentStyle" name="Content style" placeholder="E.g. fast-paced gaming content, lifestyle vlogs, business tips…"></textarea>
+        </div>
+        <div class="field">
+          <label for="references">Any reference videos or creators you love?</label>
+          <textarea id="references" name="References" placeholder="Drop links or names — helps us match your style"></textarea>
+        </div>
+
+        <button class="btn btn-accent" type="submit" id="sendBtn">Submit onboarding <span aria-hidden="true">→</span></button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="logo" href="#top" aria-label="Editoryx home">Editor<span class="accent">yx</span></a>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <p class="copyright">&copy; 2026 Editoryx. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* ------------------------------------------------------------------
+     SETTINGS
+     Where the form goes. Leave FORM_ENDPOINT empty and the form opens
+     the visitor's email app with everything filled in, addressed to
+     CONTACT_EMAIL. If you use a form service (Formspree, Basin, etc.),
+     paste its URL between the quotes and submissions go there instead.
+  ------------------------------------------------------------------ */
+  var FORM_ENDPOINT = "";
+  var CONTACT_EMAIL = "hello@editoryx.co";
+
+  /* PRICES: what one video costs, in dollars. Change a number here and
+     every quote on the page follows. */
+  /* STRIPE LINKS: one checkout link per price. Each is a monthly
+     per-video price with adjustable quantity, so the customer sets
+     how many videos they want on the Stripe page. */
+  var LINKS = {
+    reels: {
+      basic:    "https://buy.stripe.com/cNidR2deS25HeELamT2Nq0y",
+      advanced: "https://buy.stripe.com/cNi5kw4Im5hT7cjfHd2Nq0z",
+      premium:  "https://buy.stripe.com/3cIdR24Im25HfIP1Qn2Nq0A"
+    },
+    long: {
+      basic:    "https://buy.stripe.com/7sYbIUcaObGh0NV0Mj2Nq0B",
+      advanced: "https://buy.stripe.com/6oUfZacaO8u5fIP66D2Nq0C",
+      premium:  "https://buy.stripe.com/3cI8wI1wa25HgMT3Yv2Nq0D"
+    }
+  };
+  var RATES = {
+    reels: { basic: 25, advanced: 40, premium: 60 },
+    long:  { basic: 80, advanced: 120, premium: 160 }
+  };
+  var TIERS = {
+    reels: {
+      basic: ["Music", "Captions"],
+      advanced: ["Animations", "Effects"],
+      premium: ["AI effects", "Color grade"]
+    },
+    long: {
+      basic: ["Clean cuts", "Music"],
+      advanced: ["Animations", "Graphics"],
+      premium: ["AI effects", "Full production"]
+    }
+  };
+  var TIER_NAMES = { basic: "Basic", advanced: "Advanced", premium: "Premium" };
+  var MIN = 1, MAX = 200;
+  var REDUCE_MOTION = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  var shownQuote = null, quoteFrame = 0;
+
+  function el(id) { return document.getElementById(id); }
+  var countInput = el("count");
+  var form = el("requestForm");
+  var status = el("formStatus");
+  var sendBtn = el("sendBtn");
+
+  function checked(name) {
+    return document.querySelector('input[name="' + name + '"]:checked').value;
+  }
+  function getCount() {
+    var n = parseInt(countInput.value, 10);
+    if (isNaN(n)) n = MIN;
+    return Math.min(MAX, Math.max(MIN, n));
+  }
+  function money(n) { return "$" + n.toLocaleString("en-US"); }
+  function lower(s) { return s === "AI effects" ? s : s.charAt(0).toLowerCase() + s.slice(1); }
+
+  // The quote counts up or down to its new value instead of snapping
+  function rollQuote(target) {
+    var node = el("quotePrice");
+    var finalText = money(target);
+    cancelAnimationFrame(quoteFrame);
+    if (shownQuote === null || shownQuote === target || REDUCE_MOTION || !window.requestAnimationFrame) {
+      shownQuote = target;
+      node.textContent = finalText;
+      node.style.setProperty("--chars", finalText.length);
+      return;
+    }
+    var from = shownQuote, start = null, dur = 420;
+    node.style.setProperty("--chars", Math.max(finalText.length, money(from).length));
+    var card = node.parentNode;
+    card.classList.remove("bump"); void card.offsetWidth; card.classList.add("bump");
+    function tick(now) {
+      if (start === null) start = now;
+      var t = Math.min(1, (now - start) / dur);
+      var eased = 1 - Math.pow(1 - t, 3);
+      shownQuote = Math.round(from + (target - from) * eased);
+      node.textContent = money(shownQuote);
+      if (t < 1) { quoteFrame = requestAnimationFrame(tick); }
+      else { shownQuote = target; node.textContent = finalText; node.style.setProperty("--chars", finalText.length); }
+    }
+    quoteFrame = requestAnimationFrame(tick);
+  }
+
+  function render() {
+    var type = checked("type");
+    var quality = checked("quality");
+    var n = getCount();
+    var features = TIERS[type][quality];
+    var rate = RATES[type][quality];
+    var unit = type === "reels" ? "reel" : "video";
+    var units = type === "reels" ? "reels" : "videos";
+    var longName = type === "reels" ? (n === 1 ? "reel" : "reels") : (n === 1 ? "long-form video" : "long-form videos");
+
+    // Highlight the selected cards
+    document.querySelectorAll(".choice").forEach(function (c) {
+      c.classList.toggle("is-on", c.querySelector("input").checked);
+    });
+
+    // Quality cards follow the content type
+    ["basic", "advanced", "premium"].forEach(function (q) {
+      var f = TIERS[type][q];
+      document.querySelector('[data-note="' + q + '"]').textContent = f[0] + " + " + lower(f[1]);
+      document.querySelector('[data-rate="' + q + '"]').textContent = money(RATES[type][q]) + "/" + unit;
+    });
+    el("unit").textContent = units + "/mo";
+
+    // Quote: videos x price per video
+    var total = money(n * rate);
+    rollQuote(n * rate);
+    el("quoteCount").textContent = n + " " + (n === 1 ? unit : units) + "/mo";
+    el("quoteRate").textContent = money(rate) + "/" + unit;
+    el("featA").textContent = features[0];
+    el("featB").textContent = features[1];
+
+    // Subscribe button goes to the checkout for this type + quality
+    el("subscribeBtn").href = LINKS[type][quality];
+    var note = el("quoteNote");
+    note.textContent = "";
+    note.appendChild(document.createTextNode("At checkout, set the quantity to "));
+    var strong = document.createElement("strong");
+    strong.textContent = n;
+    note.appendChild(strong);
+    note.appendChild(document.createTextNode(" to match this quote."));
+
+    var summary = n + " " + longName + " a month, " + TIER_NAMES[quality] + " quality";
+    el("recapText").textContent = summary;
+    el("recapQuote").textContent = total + "/mo";
+    el("planField").value = summary + " (" + features[0] + " + " + features[1] + ")";
+    el("quoteField").value = total + " a month (" + money(rate) + " per " + unit + ")";
+    el("liveSummary").textContent = summary + ". Quote: " + total + " a month.";
+  }
+
+  document.querySelectorAll('input[name="type"], input[name="quality"]').forEach(function (r) {
+    r.addEventListener("change", render);
+  });
+  countInput.addEventListener("input", render);
+  countInput.addEventListener("blur", function () { countInput.value = getCount(); render(); });
+  el("minus").addEventListener("click", function () {
+    countInput.value = Math.max(MIN, getCount() - 1); render();
+  });
+  el("plus").addEventListener("click", function () {
+    countInput.value = Math.min(MAX, getCount() + 1); render();
+  });
+
+  function val(id) { return el(id).value.trim(); }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    countInput.value = getCount();
+    render();
+    status.className = "form-status";
+
+    var data = {
+      "Plan": el("planField").value,
+      "Quote": el("quoteField").value,
+      "First name": val("firstName"),
+      "Last name": val("lastName"),
+      "Email": val("email"),
+      "Platforms": val("platforms"),
+      "Content style": val("contentStyle"),
+      "References": val("references")
+    };
+
+    if (FORM_ENDPOINT) {
+      sendBtn.disabled = true;
+      status.textContent = "Submitting your onboarding…";
+      fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      }).then(function (res) {
+        if (!res.ok) throw new Error("Request failed");
+        form.reset();
+        render();
+        status.textContent = "Onboarding submitted. We'll email " + data["Email"] + " to confirm and get started.";
+      }).catch(function () {
+        status.className = "form-status error";
+        status.innerHTML = 'Your onboarding didn\'t send. Try again, or email it to <a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + "</a>.";
+      }).then(function () { sendBtn.disabled = false; });
+      return;
+    }
+
+    var lines = Object.keys(data).map(function (k) { return k + ": " + (data[k] || "-"); });
+    var subject = "New client onboarding: " + el("recapText").textContent + ", " + el("recapQuote").textContent;
+    window.location.href = "mailto:" + CONTACT_EMAIL +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(lines.join("\n"));
+    status.textContent = "Your email app should open with your onboarding filled in. Press send to finish.";
+  });
+
+  render();
+})();
+
+/* ---------- Motion: scroll reveals, counting stats, drifting hero text ---------- */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+  try {
+
+  // Mark elements to reveal; siblings marked in one call come in one after another
+  function mark(selector, stagger) {
+    var counts = [];
+    document.querySelectorAll(selector).forEach(function (node) {
+      var entry = null;
+      for (var i = 0; i < counts.length; i++) { if (counts[i].parent === node.parentNode) entry = counts[i]; }
+      if (!entry) { entry = { parent: node.parentNode, n: 0 }; counts.push(entry); }
+      node.setAttribute("data-reveal", "");
+      node.style.setProperty("--d", (entry.n * (stagger || 0)) + "ms");
+      entry.n += 1;
+    });
+  }
+  mark(".section .eyebrow, .section h2, .section .lede", 90);
+  mark(".step", 110);
+  mark(".trial");
+  mark(".group", 100);
+  mark(".quote-card");
+  mark(".contact-points li", 90);
+  mark(".onboard");
+
+  function countUp(node) {
+    var target = parseInt(node.getAttribute("data-count"), 10);
+    var prefix = node.getAttribute("data-prefix") || "";
+    var suffix = node.getAttribute("data-suffix") || "";
+    var start = null, dur = 1300;
+    function tick(now) {
+      if (start === null) start = now;
+      var t = Math.min(1, (now - start) / dur);
+      var eased = 1 - Math.pow(1 - t, 3);
+      node.textContent = prefix + Math.round(target * eased) + suffix;
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    node.textContent = prefix + "0" + suffix;
+    requestAnimationFrame(tick);
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var node = entry.target;
+      io.unobserve(node);
+      if (node.hasAttribute("data-count")) { setTimeout(function () { countUp(node); }, 900); return; }
+      node.classList.add("in");
+      // Once it has arrived, hand the element back to its normal styles
+      var wait = 1700 + (parseInt(node.style.getPropertyValue("--d"), 10) || 0);
+      setTimeout(function () { node.removeAttribute("data-reveal"); node.classList.remove("in"); node.style.removeProperty("--d"); }, wait);
+    });
+  }, { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
+  document.querySelectorAll("[data-reveal], [data-count]").forEach(function (node) { io.observe(node); });
+  document.documentElement.classList.add("motion");
+  } catch (err) {
+    document.documentElement.classList.remove("motion");
+    return;
+  }
+
+  // The outlined EDIT behind the hero drifts as you scroll
+  var ghost = document.querySelector(".hero-ghost");
+  var ticking = false;
+  window.addEventListener("scroll", function () {
+    if (ticking || !ghost) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      var y = window.scrollY || 0;
+      if (y < window.innerHeight * 1.5) ghost.style.transform = "translate3d(" + (y * -0.06) + "px," + (y * 0.18) + "px,0)";
+      ticking = false;
+    });
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
